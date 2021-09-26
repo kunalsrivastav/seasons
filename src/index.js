@@ -20,7 +20,22 @@ class App extends React.Component {
 
     renderContent() {
         if (this.state.errorMessage && !this.state.lat) {
-            return <div>Error: {this.state.errorMessage}</div>;
+            return (
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "100vh",
+                        color: "",
+                        backgroundColor: "#FF2626",
+                    }}
+                >
+                    <h1 style={{ fontSize: "3rem" }}>
+                        Error: {this.state.errorMessage}
+                    </h1>
+                </div>
+            );
         }
         if (!this.state.errorMessage && this.state.lat) {
             return <SeasonDisplay lat={this.state.lat} />;
